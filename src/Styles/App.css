@@ -1,0 +1,37 @@
+body {
+  background-color: #f8fafc;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+.dish-card {
+  width: 100%;
+  max-width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.dish-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(36, 139, 194, 0.7);
+  z-index: 5;
+}
+
+.dish-card.focused {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(36, 139, 194, 0.8);
+  z-index: 10;
+  filter: none;
+  cursor: default;
+}
+
+@media (max-width: 575.98px) {
+  .dish-card {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
