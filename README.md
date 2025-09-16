@@ -62,6 +62,8 @@ EatMuch is a responsive React web app providing an intuitive platform to explore
         react
         react-bootstrap,
         react-dom
+        js-sha256
+
 
 3. Run the development server:  npm run dev
 

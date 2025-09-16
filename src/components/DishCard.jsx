@@ -19,7 +19,7 @@ export default function DishCard({
     >
       <Card.Img
         variant="top"
-        src={dish.image}
+        src={dish.image}   // images from public folder
         alt={dish.name}
         style={{ height: '200px', objectFit: 'cover', objectPosition: 'center' }}
       />
@@ -28,7 +28,6 @@ export default function DishCard({
           {dish.name} {isSelected && <Badge bg="info">Selected</Badge>}
         </Card.Title>
         <Card.Text className="mb-3">{dish.description}</Card.Text>
-
         <div className="mt-auto d-flex align-items-center justify-content-between">
           <div>
             {!isSelected ? (
@@ -55,9 +54,7 @@ export default function DishCard({
               </Button>
             )}
           </div>
-
           <div className="fw-bold text-success text-center flex-grow-1">₹{dish.price}</div>
-
           <div>
             <Button
               variant="warning"

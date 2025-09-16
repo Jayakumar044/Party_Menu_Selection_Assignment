@@ -10,6 +10,7 @@ import {
   Alert,
   Spinner,
 } from 'react-bootstrap';
+import sha256 from 'js-sha256';
 
 export default function HomePage({ login }) {
   const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -32,7 +33,7 @@ export default function HomePage({ login }) {
   const [registerError, setRegisterError] = useState('');
   const [showRegisterSuccessAlert, setShowRegisterSuccessAlert] = useState(false);
 
-  // Password validation
+  // Password validation regex
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
   const handleRegister = (e) => {
@@ -71,7 +72,7 @@ export default function HomePage({ login }) {
       username: regUsername,
       email: regEmail,
       contact: regContact,
-      password: regPassword,
+      password: sha256(regPassword), // hash password here
     });
     localStorage.setItem('users', JSON.stringify(users));
 
@@ -101,7 +102,8 @@ export default function HomePage({ login }) {
       let users = JSON.parse(localStorage.getItem('users')) || [];
       const userFound = users.find(
         (user) =>
-          user.username === loginUsername.trim() && user.password === loginPassword
+          user.username === loginUsername.trim() &&
+          user.password === sha256(loginPassword) // hash login password for comparison
       );
 
       if (userFound) {
@@ -216,9 +218,7 @@ export default function HomePage({ login }) {
         >
           EatMuch
         </h1>
-        <p className="fs-4 my-3">
-          Discover and order your favorite party dishes with ease.
-        </p>
+        <p className="fs-4 my-3">Discover and order your favorite party dishes with ease.</p>
         <Button
           size="lg"
           variant="outline-light"
@@ -228,11 +228,8 @@ export default function HomePage({ login }) {
         </Button>
       </Container>
 
-      <Modal
-        show={showLoginModal}
-        onHide={() => setShowLoginModal(false)}
-        centered
-      >
+      {/* Login Modal */}
+      <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
@@ -274,22 +271,15 @@ export default function HomePage({ login }) {
         </Modal.Body>
       </Modal>
 
-      <Modal
-        show={showRegisterModal}
-        onHide={() => setShowRegisterModal(false)}
-        centered
-      >
+      {/* Register Modal */}
+      <Modal show={showRegisterModal} onHide={() => setShowRegisterModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Register</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {registerError && <Alert variant="danger">{registerError}</Alert>}
           {showRegisterSuccessAlert && (
-            <Alert
-              variant="success"
-              onClose={onRegisterSuccessClose}
-              dismissible
-            >
+            <Alert variant="success" onClose={onRegisterSuccessClose} dismissible>
               Registered successfully! Click OK to login now.
               <div className="mt-3 text-center">
                 <Button onClick={onRegisterSuccessClose}>OK</Button>

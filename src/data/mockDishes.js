@@ -1,10 +1,10 @@
 export const dishes = [
-  // STARTERS (3 dishes)
+  // STARTERS
   {
     id: 1,
     name: "Chicken Tikka",
     description: "Grilled chicken marinated in spicy yogurt-based masala.",
-    image: "src/assets/Chicken_Tikka.png",
+    image: "/Chicken_Tikka.png",
     mealType: "STARTER",
     type: "NON-VEG",
     price: 180,
@@ -21,7 +21,7 @@ export const dishes = [
     id: 2,
     name: "Paneer Tikka",
     description: "Spiced grilled paneer cubes.",
-    image: "src/assets/Paneer_Tikka.png",
+    image: "/Paneer_Tikka.png",
     mealType: "STARTER",
     type: "VEG",
     price: 150,
@@ -38,7 +38,7 @@ export const dishes = [
     id: 3,
     name: "Veg Spring Rolls",
     description: "Crispy rolls stuffed with mixed vegetables.",
-    image: "src/assets/Veg_Spring_Roll.png",
+    image: "/Veg_Spring_Roll.png",
     mealType: "STARTER",
     type: "VEG",
     price: 120,
@@ -52,12 +52,12 @@ export const dishes = [
     ],
   },
 
-  // MAIN COURSE (3 dishes)
+  // MAIN COURSE
   {
     id: 4,
     name: "Kadhai Paneer",
     description: "Paneer cubes in spicy onion gravy with onions and capsicum cubes.",
-    image: "src/assets/Kadhai_Paneer.png",
+    image: "/Kadhai_Paneer.png",
     mealType: "MAIN COURSE",
     type: "VEG",
     price: 220,
@@ -78,7 +78,7 @@ export const dishes = [
     id: 5,
     name: "Butter Chicken",
     description: "Creamy tomato based chicken curry.",
-    image: "src/assets/Butter_Chicken.png",
+    image: "/Butter_Chicken.png",
     mealType: "MAIN COURSE",
     type: "NON-VEG",
     price: 280,
@@ -95,7 +95,7 @@ export const dishes = [
     id: 6,
     name: "Dal Tadka",
     description: "Yellow lentils tempered with ghee and spices.",
-    image: "src/assets/Dal_Tadka.png",
+    image: "/Dal_Tadka.png",
     mealType: "MAIN COURSE",
     type: "VEG",
     price: 160,
@@ -109,12 +109,12 @@ export const dishes = [
     ],
   },
 
-  // DESSERTS (3 dishes)
+  // DESSERTS
   {
     id: 7,
     name: "Gulab Jamun",
     description: "Soft milk balls soaked in rose-flavored sugar syrup.",
-    image: "src/assets/Gulab_Jamun.png",
+    image: "/Gulab_Jamun.png",
     mealType: "DESSERT",
     type: "VEG",
     price: 90,
@@ -132,7 +132,7 @@ export const dishes = [
     id: 8,
     name: "Rasgulla",
     description: "Spongy sweet cheese balls soaked in sugar syrup.",
-    image: "src/assets/Rasgulla.png",
+    image: "/Rasgulla.png",
     mealType: "DESSERT",
     type: "VEG",
     price: 85,
@@ -147,7 +147,7 @@ export const dishes = [
     id: 9,
     name: "Chocolate Brownie",
     description: "Rich and moist chocolate dessert squares.",
-    image: "src/assets/Chocolate_Brownie.png",
+    image: "/Chocolate_Brownie.png",
     mealType: "DESSERT",
     type: "VEG",
     price: 125,
@@ -160,12 +160,12 @@ export const dishes = [
     ],
   },
 
-  // SIDES (3 dishes)
+  // SIDES
   {
     id: 10,
     name: "French Fries",
     description: "Golden and crispy fried potato sticks.",
-    image: "src/assets/French_Fries.png",
+    image: "/French_Fries.png",
     mealType: "SIDES",
     type: "VEG",
     price: 80,
@@ -181,7 +181,7 @@ export const dishes = [
     id: 11,
     name: "Garden Salad",
     description: "Fresh vegetables mix with light dressing.",
-    image: "src/assets/Garden_Salad.png",
+    image: "/Garden_Salad.png",
     mealType: "SIDES",
     type: "VEG",
     price: 95,
@@ -197,7 +197,7 @@ export const dishes = [
     id: 12,
     name: "Coleslaw",
     description: "Cabbage and carrot salad with creamy dressing.",
-    image: "src/assets/Coleslaw.png",
+    image: "/Coleslaw.png",
     mealType: "SIDES",
     type: "VEG",
     price: 90,
